@@ -8,7 +8,7 @@
 #define RB_SIZE 64u            //capacity. MUST be a power of two
 #define RB_MASK (RB_SIZE - 1u)
 
-typedef struct {
+typedef struct ring_buffer_t {
     uint8_t  buffer[RB_SIZE];
     uint16_t head;   //next write position (free-running, masked on use)
     uint16_t tail;   //next read position  (free-running, masked on use)
